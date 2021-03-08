@@ -1,0 +1,218 @@
+:root {
+  --hue: 215;
+  --saturation: 46%;
+  --lightness: 93%;
+  --reach: 0.3rem;
+  --blur: 0.6rem;
+  --alpha: 0.8;
+  --dark: hsla(var(--hue), var(--saturation), calc(var(--lightness) - 15%), var(--alpha));
+  --light: hsla(var(--hue), var(--saturation), calc(var(--lightness) + 15%), var(--alpha));
+  --white: #FFFFFF;
+  --greyLight-1: #E4EBF5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+  --shadow: var(--reach) var(--reach) var(--blur) var(--dark), calc(-1 * var(--reach)) calc(-1 * var(--reach)) var(--blur) var(--light);
+  --inner-shadow: inset var(--reach) var(--reach) var(--blur) var(--dark), inset calc(-1 * var(--reach)) calc(-1 * var(--reach)) var(--blur) var(--light);
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-y: scroll;
+  background: var(--greyLight-1);
+  font-family: "Poppins", sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 90%;
+
+  }
+}
+
+.container-m {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background: var(--greyLight-1);
+}
+
+/*  SEARCH  */
+.search {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  width: 20.4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding-left: 3.8rem;
+  box-shadow: var(--inner-shadow);
+  background: none;
+  font-family: inherit;
+  color: black;
+}
+.search-input::placeholder {
+  color: var(--greyLight-3);
+}
+.search-input:focus {
+  outline: none;
+  box-shadow: var(--shadow);
+}
+.search-input:focus + .search-icon {
+  color: black;
+}
+.search-icon {
+  height: 1.4rem;
+  position: absolute;
+  font-size: 1.4rem;
+  padding: 0 1rem;
+  display: flex;
+  color: var(--greyDark);
+  transition: 0.3s ease;
+}
+
+
+/*  CHIP  */
+.chip {
+  margin: 0;
+  height: 65px;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chip-icon {
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  color: black;
+}
+.chip p {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+}
+
+
+.result-heading-container{
+  margin-top: 60px;
+  margin-left: 5%;
+  border-radius: 0.5rem;
+  /* box-shadow: var(--shadow); */
+  width: 300px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--greyDark);
+}
+
+.result-heading{
+  font-size: 20px;
+  color: black;
+}
+
+
+/* Gist Box */
+
+.data-box-outer{
+  margin-top: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.data-box-inner{
+  /* top: 10px; */
+  margin-left: 10px;
+}
+
+.gist-heading{
+  /* background-color: blue; */
+  border-bottom: 4px solid black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.gist-file-heading, .gist-fork-heading{
+  border-left: 2px solid black;
+  font-size: 1.1rem;
+  /* left: 10px; */
+}
+
+.gist-forks ul, .gist-files ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.gist-forks li ,.gist-files li{
+  padding: 10px 10px;
+  box-shadow: var(--shadow);
+  width: 700px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.file-link{
+  text-decoration-color: black;
+  text-decoration: none;
+}
+
+.file-link:visited { text-decoration: none; }
+
+.fa-file{
+  margin-left: 5px;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.fork-avatar{
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.file-name{
+  margin-left: 20px;
+}
+
+.file-type{
+}
+
+.filetype-des{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.fork-name{
+  margin-left: 15px;
+}
